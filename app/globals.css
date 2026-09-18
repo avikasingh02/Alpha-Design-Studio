@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #1f2a44;
+    --color-primary-light: #33456b;
+    --color-accent: #c6a75e;
+    --color-bg: #e8dcc8;
+    --color-bg-light: #f5f0e6;
+    --color-text: #1a1f2e;
+    --color-text-muted: #6b6459;
+    --color-border: #d9cbae;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Visible focus states throughout, including on dark sections, for WCAG AA */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Eyebrow labels carry the one restrained accent touch site-wide: a short
+     underline-style dash, never accent-colored text. */
+  .eyebrow {
+    @apply relative inline-flex items-center gap-2.5 font-sans text-xs font-medium uppercase tracking-widest2 text-primary/70;
+  }
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 1.25rem;
+    height: 1px;
+    background-color: var(--color-accent);
+  }
+
+  .eyebrow-light {
+    @apply relative inline-flex items-center gap-2.5 font-sans text-xs font-medium uppercase tracking-widest2 text-bg-light/70;
+  }
+  .eyebrow-light::before {
+    content: "";
+    display: inline-block;
+    width: 1.25rem;
+    height: 1px;
+    background-color: var(--color-accent);
+  }
+
+  .section-heading {
+    @apply font-serif text-3xl sm:text-4xl md:text-5xl font-medium text-primary leading-[1.1];
+  }
+
+  .hairline {
+    @apply border-t border-border;
+  }
+
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12;
+  }
+
+  /* Default fill — used for secondary/repeated actions (e.g. mobile nav CTA). */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-primary text-bg-light px-7 py-3.5 text-sm font-medium uppercase tracking-widest2 transition-colors duration-200 hover:bg-primary-light focus-visible:outline-2 focus-visible:outline-accent disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-primary text-primary px-7 py-3.5 text-sm font-medium uppercase tracking-widest2 transition-colors duration-200 hover:bg-primary hover:text-bg-light;
+  }
+
+  /* For CTAs that sit on a navy background (header, footer) — a navy fill
+     wouldn't read there, so this keeps navy dominant via the surrounding
+     section instead of the button itself. */
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 border border-bg-light/40 text-bg-light px-7 py-3.5 text-sm font-medium uppercase tracking-widest2 transition-colors duration-200 hover:bg-bg-light hover:text-primary;
+  }
+
+  /* The accent gold fill — reserved for the site's single key conversion
+     action (the form submit button) and never used as decoration elsewhere. */
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 bg-accent text-primary px-7 py-3.5 text-sm font-medium uppercase tracking-widest2 transition-colors duration-200 hover:bg-primary hover:text-bg-light focus-visible:outline-2 focus-visible:outline-primary disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+}
