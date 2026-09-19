@@ -41,7 +41,7 @@ function ProjectFigure({
   aspect: string;
 }) {
   return (
-    <figure className="flex flex-col">
+    <figure className="group flex flex-col">
       <div
         className={`relative w-full ${aspect} overflow-hidden border border-border shadow-[0_20px_45px_-25px_rgba(31,42,68,0.35)]`}
       >
@@ -49,7 +49,7 @@ function ProjectFigure({
           src={image}
           alt={`${title} — ${category} interior design project`}
           fill
-          className="object-cover"
+          className="object-cover transition-transform duration-300 ease-out group-hover:scale-105 group-active:scale-105"
         />
       </div>
       <figcaption className="mt-4 flex items-baseline justify-between gap-3">
@@ -68,7 +68,9 @@ export default function Portfolio() {
       <div className="container-page">
         <div className="max-w-xl">
           <p className="eyebrow mb-6">Selected Work</p>
-          <h2 className="section-heading">A few rooms we&rsquo;re proud of.</h2>
+          <h2 className="font-serif text-2xl font-medium leading-[1.1] text-primary sm:text-3xl md:text-4xl">
+            A few rooms we&rsquo;re proud of.
+          </h2>
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-5 sm:gap-8">

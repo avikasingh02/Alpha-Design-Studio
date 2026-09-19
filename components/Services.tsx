@@ -5,22 +5,22 @@ const services = [
   {
     icon: Home,
     title: "Residential Design",
-    description: "Full-home interiors built around how your family lives.",
+    description: "Full-home interiors built around how you live.",
   },
   {
     icon: Building2,
     title: "Commercial Interiors",
-    description: "Workplaces, retail, and hospitality spaces built to perform.",
+    description: "Workplaces, retail, and hospitality spaces.",
   },
   {
     icon: Ruler,
     title: "Space Planning",
-    description: "Layouts and flow that make every square foot earn its place.",
+    description: "Layouts that make every space work harder.",
   },
   {
     icon: Palette,
     title: "Styling & Staging",
-    description: "Furnishing and finishing touches for market-ready spaces.",
+    description: "Furnishing and styling for market-ready spaces.",
   },
 ];
 
